@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.game-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 18px;
+}
+
+.game-area {
+    display: flex;
+    gap: 0;
+    background: #f5f5f5;
+}
+
+#gameCanvas {
+    flex: 1;
+    background: #ffffff;
+    cursor: crosshair;
+    display: block;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.tower-menu h3,
+.controls h3,
+.stats h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+}
+
+.tower-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.tower-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.tower-btn:active {
+    transform: translateY(0);
+}
+
+.tower-btn small {
+    display: block;
+    font-size: 11px;
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+.controls {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.btn-primary,
+.btn-secondary {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 13px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+}
+
+.btn-secondary {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #d0d0d0;
+}
+
+.stats {
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.stats p {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+}
+
+.stats span {
+    font-weight: bold;
+    color: #667eea;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 28px;
+}
+
+.modal-content p {
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+    .game-area {
+        flex-direction: column;
+    }
+
+    #gameCanvas {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        max-width: 100%;
+        height: 400px;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .tower-menu,
+    .controls,
+    .stats {
+        flex: 1;
+        min-width: 200px;
+    }
+}

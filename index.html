@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>领地占领塔防游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>领地占领塔防游戏</h1>
+            <div class="game-info">
+                <span>生命值: <span id="health">20</span></span>
+                <span>金币: <span id="gold">500</span></span>
+                <span>波数: <span id="wave">1</span>/<span id="totalWaves">10</span></span>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <canvas id="gameCanvas" width="1000" height="600"></canvas>
+            <div class="sidebar">
+                <div class="tower-menu">
+                    <h3>防御塔</h3>
+                    <button class="tower-btn" data-tower="archer" data-cost="100">
+                        🏹 弓箭塔<br><small>100金币</small>
+                    </button>
+                    <button class="tower-btn" data-tower="magic" data-cost="150">
+                        ✨ 魔法塔<br><small>150金币</small>
+                    </button>
+                    <button class="tower-btn" data-tower="slow" data-cost="120">
+                        ❄️ 减速塔<br><small>120金币</small>
+                    </button>
+                    <button class="tower-btn" data-tower="cannon" data-cost="200">
+                        💣 炮塔<br><small>200金币</small>
+                    </button>
+                </div>
+                <div class="controls">
+                    <button id="startWaveBtn" class="btn-primary">开始波次</button>
+                    <button id="speedBtn" class="btn-secondary">加速 1x</button>
+                    <button id="clearBtn" class="btn-secondary">清空选择</button>
+                </div>
+                <div class="stats">
+                    <h3>统计</h3>
+                    <p>已消灭: <span id="kills">0</span></p>
+                    <p>总伤害: <span id="damage">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameOverModal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="gameOverTitle">游戏失败</h2>
+                <p id="gameOverMessage"></p>
+                <button id="restartBtn" class="btn-primary">重新开始</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
